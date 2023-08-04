@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Good morning Clock</title>
+</head>
+<body>
+    
+    <button onclick=" 
+         pickcoin(`head`)
+    " >Head</button>
+
+
+    <button onclick=" 
+         pickcoin(`tail`)
+    " >Tails</button>
+
+
+
+<script>
+    
+
+    function pickcoin(param){
+
+        const randm = Math.random();
+
+        (randm >= 1/10 && randm <= 1/2) ? cmpick = `tail` : cmpick = `head`;
+        
+       (cmpick === param) ? alert(`you picked ${param} the computer  picked  ${cmpick} you loose `) : alert(`you picked ${param} the computer picked  ${cmpick} you win `);
+
+
+    }
+    
+
+</script>
+    
+
+   
