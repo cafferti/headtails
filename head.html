@@ -54,8 +54,14 @@
     function sayname(){
      const  input =  document.querySelector(`.js-input`).value
      const namep = document.querySelector(`.js-display-name`)
+
+     if(input === ``){
+         namep.innerHTML = (`type your name please`)
+     }else{
+        namep.innerHTML = (`your name is ${input}`)
+     }
      
-     namep.innerHTML = (`your name is ${input}`)
+  
      
 
     };
