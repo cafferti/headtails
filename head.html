@@ -6,6 +6,10 @@
     <title>Good morning Clock</title>
 </head>
 <body>
+
+    <button class="js-9a">9a</button>
+
+    <button class="js-9b">9b</button>
     
     <button onclick=" 
          pickcoin(`head`)
@@ -15,6 +19,8 @@
     <button onclick=" 
          pickcoin(`tail`)
     " >Tails</button>
+
+    <p class="js-player-move" ></p>
 
 
 
@@ -29,8 +35,13 @@
         
        (cmpick === param) ? alert(`you picked ${param} the computer  picked  ${cmpick} you loose `) : alert(`you picked ${param} the computer picked  ${cmpick} you win `);
 
+       document.querySelector(`.js-player-move`).innerHTML = `you picked ${param}`
+
 
     }
+
+    console.log(document.querySelector(`.js-9a`))
+    document.querySelector(`.js-9b`).innerHTML = `9bdone!`
     
 
 </script>
