@@ -1,78 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Good morning Clock</title>
-</head>
-<body>
-
+  </head>
+  <body>
     <button class="js-9a">9a</button>
 
     <button class="js-9b">9b</button>
-    
-    <button onclick=" 
+
+    <button
+      onclick=" 
          pickcoin(`head`)
-    " >Head</button>
+    "
+    >
+      Head
+    </button>
 
-
-    <button onclick=" 
+    <button
+      onclick=" 
          pickcoin(`tail`)
-    " >Tails</button>
+    "
+    >
+      Tails
+    </button>
 
-    <p class="js-player-move" ></p>
-
+    <p class="js-player-move"></p>
 
     <h1>mame exercise</h1>
 
-    <input onkeydown="onpress(event)" class="js-input" type="text">
+    <input onkeydown="onpress(event)" class="js-input" type="text" />
     <button onclick="sayname()" class="js-submit">submit</button>
     <p class="js-display-name"></p>
 
-
-
-<script>
-    
-
-    function pickcoin(param){
-
+    <script>
+      function pickcoin(param) {
         const randm = Math.random();
 
-        (randm >= 1/10 && randm <= 1/2) ? cmpick = `tail` : cmpick = `head`;
-        
-       (cmpick === param) ? alert(`you picked ${param} the computer  picked  ${cmpick} you loose `) : alert(`you picked ${param} the computer picked  ${cmpick} you win `);
+        randm >= 1 / 10 && randm <= 1 / 2
+          ? (cmpick = `tail`)
+          : (cmpick = `head`);
 
-       document.querySelector(`.js-player-move`).innerHTML = `you picked ${param}`
+        cmpick === param
+          ? alert(
+              `you picked ${param} the computer  picked  ${cmpick} you loose `
+            )
+          : alert(
+              `you picked ${param} the computer picked  ${cmpick} you win `
+            );
 
+        document.querySelector(
+          `.js-player-move`
+        ).innerHTML = `you picked ${param}`;
+      }
 
-    }
+      console.log(document.querySelector(`.js-9a`));
+      document.querySelector(`.js-9b`).innerHTML = `9bdone!`;
 
-    console.log(document.querySelector(`.js-9a`))
-    document.querySelector(`.js-9b`).innerHTML = `9bdone!`
+      function sayname() {
+        const input = document.querySelector(`.js-input`).value;
+        const namep = document.querySelector(`.js-display-name`);
 
+        if (input === ``) {
+          namep.innerHTML = `type your name please`;
+        } else {
+          namep.innerHTML = `your name is ${input}`;
+        }
+      }
 
-    function sayname(){
-     const  input =  document.querySelector(`.js-input`).value
-     const namep = document.querySelector(`.js-display-name`)
-
-     if(input === ``){
-         namep.innerHTML = (`type your name please`)
-     }else{
-        namep.innerHTML = (`your name is ${input}`)
-     }
-     
-  
-     
-
-    };
-   
-    function onpress(event){
-       (event.key === `Enter`) ? sayname() : ``;
-    }
-    
-
-
-</script>
-    
-
-   
+      function onpress(event) {
+        event.key === `Enter` ? sayname() : ``;
+      }
+    </script>
+  </body>
+</html>
